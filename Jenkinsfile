@@ -12,7 +12,7 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build("demo-calculator-service")
+        app = docker.build("rasrividya/demo-calculator-service")
     }
 
     stage('Push image') {
