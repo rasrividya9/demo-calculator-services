@@ -16,7 +16,7 @@ node {
     }
 
     stage('Push image') {
-        docker.withRegistry('https://registry.hub.docker.com/rasrividya', 'dockerhubcredentials') {
+        docker.withRegistry('https://registry.hub.docker.com/rasrividya/demo-calculator-service/', 'dockerhubcredentials') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
