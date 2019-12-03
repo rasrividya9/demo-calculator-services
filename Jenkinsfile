@@ -12,11 +12,11 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build("rasrividya/demo-calculator-service")
+        app = docker.build("demo-calculator-service")
     }
 
     stage('Push image') {
-        docker.withRegistry('https://registry.hub.docker.com', 'dockerhubcredentials') {
+        docker.withRegistry('https://registry.hub.docker.com/rasrividya', 'dockerhubcredentials') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
         }
